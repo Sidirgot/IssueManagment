@@ -17,15 +17,14 @@
     - Laravel Echo
     - TailwindCSS
 
-The application aims to deliver one roof and a simple user interface for the proccess of testing projects for issues and bugs.
+The application aims to deliver one roof and a simple user interface for the process of testing projects for issues and bugs.
 
-It features 3 types of roles.
+**It features 3 types of roles.**
+- The manager witch serves as the admin of the application. He is responsible for managing the users of the system, creating new ones and the entire CRUD of the user object. He will create the projects and assign corresponding testers and developers on that project.
 
-  - The manager witch serves as the admin of the application. He is responsible for managing the users of system, creating new ones and basicly the entire CRUD of the user object. He will create the projects and assigne corresponding testers and developers on that project.
+- On the other hand, Testers who are responsible for testing the application and then opening corresponding issues with a title, description and a priority level.
 
-  - On the other hand, Testers who are responsible for testing the application and then opening corresponding issues with a title, description and a priority level.
-
-  - Lastly, there are Developers who are responsible for fixing any issue/bug that any tester has opened to a corresponding project.
+- Lastly, Developers are responsible for fixing any issue/bug that any tester has opened to a corresponding project.
 
 ## Features in development
 
