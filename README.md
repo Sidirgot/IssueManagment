@@ -37,4 +37,4 @@ The application aims to deliver one roof and a simple user interface for the pro
 
 ## License
 
-The entire Code Base of this project is under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.
+The entire Code Base of this project is under the <a href="https://github.com/Sidirgot/IssueManagment/blob/master/LICENSE.md">MIT license</a>.
