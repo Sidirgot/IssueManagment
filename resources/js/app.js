@@ -10,7 +10,6 @@ import backend from './Backend/backend'
 import routes from './routes'
 import store from './store/store'
 
-
 Vue.use(VueRouter)
 Vue.use(VModal)
 

@@ -1,7 +1,9 @@
 <?php
 
 Route::middleware('auth:api')->group(function() {
+    
     Route::get('/userInfo', 'Api\Auth\LoggedInUserController@user')->name('logged.in.user');
+
     Route::patch('/profile/update/{user}', 'Api\Team\ProfileController@update')->name('profile.update');
 
     // get all the assigned users projects

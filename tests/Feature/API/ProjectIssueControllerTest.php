@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Api;
+namespace Tests\Feature\API;
 
 use App\Followup;
 use App\Issue;
@@ -37,7 +37,7 @@ class ProjectIssueControllerTest extends TestCase
 
         $followupData = $issue->followups()->make(factory(Followup::class)->raw());
 
-        $followup = $tester->followups()->save($followupData);
+        $tester->followups()->save($followupData);
 
         $response = $this->json('get', route('project.issue.followups', [$project->id, $issue->id]))->assertStatus(200)->decodeResponseJson();
 

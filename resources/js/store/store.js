@@ -124,7 +124,7 @@ export default new Vuex.Store({
             axios.post('/logout')
                  .then( () => {
                      context.commit('revoke_auth_user')
-                     location.reload()
+                     location.replace('/login')
                  })
         }
     }

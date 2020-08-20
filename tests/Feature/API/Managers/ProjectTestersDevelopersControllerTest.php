@@ -62,7 +62,7 @@ class ProjectTestersDevelopersControllerTest extends TestCase
 
         $project = $manager->projects()->create(factory(Project::class)->raw());
 
-        $response = $this->json('patch', route('assignTester', [$project->id, $tester->id]))->assertStatus(200);
+        $this->json('patch', route('assignTester', [$project->id, $tester->id]))->assertStatus(200);
 
         $this->assertDatabaseHas('project_user', ['user_id' => $tester->id, 'project_id' => $project->id, 'type' => 'tester']);
     }
