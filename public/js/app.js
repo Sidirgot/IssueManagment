@@ -3978,6 +3978,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -4038,6 +4045,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'team-dashboard',
   data: function data() {
@@ -4047,6 +4055,7 @@ __webpack_require__.r(__webpack_exports__);
       projects: []
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['isDeveloper', 'isTester'])),
   created: function created() {
     this.fetchData();
   },
@@ -20626,38 +20635,48 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1"
-        },
-        [
-          _c("h1", { staticClass: "px-2  py-1 border-b pb-1 shadow" }, [
-            _vm._v("Opened Issues")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex items-center justify-around py-6" }, [
-            _c(
-              "svg",
-              { attrs: { width: "50", height: "50", viewBox: "0 0 20 20" } },
-              [
-                _c("path", {
-                  attrs: {
-                    fill: "#319795",
-                    d:
-                      "M18.344,16.174l-7.98-12.856c-0.172-0.288-0.586-0.288-0.758,0L1.627,16.217c0.339-0.543-0.603,0.668,0.384,0.682h15.991C18.893,16.891,18.167,15.961,18.344,16.174 M2.789,16.008l7.196-11.6l7.224,11.6H2.789z M10.455,7.552v3.561c0,0.244-0.199,0.445-0.443,0.445s-0.443-0.201-0.443-0.445V7.552c0-0.245,0.199-0.445,0.443-0.445S10.455,7.307,10.455,7.552M10.012,12.439c-0.733,0-1.33,0.6-1.33,1.336s0.597,1.336,1.33,1.336c0.734,0,1.33-0.6,1.33-1.336S10.746,12.439,10.012,12.439M10.012,14.221c-0.244,0-0.443-0.199-0.443-0.445c0-0.244,0.199-0.445,0.443-0.445s0.443,0.201,0.443,0.445C10.455,14.021,10.256,14.221,10.012,14.221"
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: "text-xl font-bold traking-wider" }, [
-              _vm._v(_vm._s(_vm.total_issues))
-            ])
-          ])
-        ]
-      )
+      _vm.isTester
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1"
+            },
+            [
+              _c("h1", { staticClass: "px-2  py-1 border-b pb-1 shadow" }, [
+                _vm._v("Opened Issues")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "flex items-center justify-around py-6" },
+                [
+                  _c(
+                    "svg",
+                    {
+                      attrs: { width: "50", height: "50", viewBox: "0 0 20 20" }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          fill: "#319795",
+                          d:
+                            "M18.344,16.174l-7.98-12.856c-0.172-0.288-0.586-0.288-0.758,0L1.627,16.217c0.339-0.543-0.603,0.668,0.384,0.682h15.991C18.893,16.891,18.167,15.961,18.344,16.174 M2.789,16.008l7.196-11.6l7.224,11.6H2.789z M10.455,7.552v3.561c0,0.244-0.199,0.445-0.443,0.445s-0.443-0.201-0.443-0.445V7.552c0-0.245,0.199-0.445,0.443-0.445S10.455,7.307,10.455,7.552M10.012,12.439c-0.733,0-1.33,0.6-1.33,1.336s0.597,1.336,1.33,1.336c0.734,0,1.33-0.6,1.33-1.336S10.746,12.439,10.012,12.439M10.012,14.221c-0.244,0-0.443-0.199-0.443-0.445c0-0.244,0.199-0.445,0.443-0.445s0.443,0.201,0.443,0.445C10.455,14.021,10.256,14.221,10.012,14.221"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "text-xl font-bold traking-wider" },
+                    [_vm._v(_vm._s(_vm.total_issues))]
+                  )
+                ]
+              )
+            ]
+          )
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "mt-8 mb-2" }, [

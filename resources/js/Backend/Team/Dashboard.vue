@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <div class="bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1">
+            <div class="bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1" v-if="isTester">
                 <h1 class="px-2  py-1 border-b pb-1 shadow">Opened Issues</h1>
                 <div class="flex items-center justify-around py-6">
                     <svg width="50" height="50" viewBox="0 0 20 20">
@@ -59,6 +59,7 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from 'vuex';
 
 export default {
     name: 'team-dashboard',
@@ -69,6 +70,10 @@ export default {
             total_issues: 0,
             projects: []
         }
+    },
+
+    computed: {
+        ...mapGetters(['isDeveloper', 'isTester'])
     },
 
     created() {

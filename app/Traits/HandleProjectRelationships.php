@@ -12,9 +12,7 @@ trait HandleProjectRelationships
      */
     public function loadRelationships($project)
     {
-        $project->load(['projectTesters', 'projectDevelopers', 'manager']);
-
-        $project->issues->load(['owner', 'followups', 'closedBy'])->loadCount('followups');
+        $project->load(['projectTesters', 'projectDevelopers', 'manager', 'issues.owner', 'issues.followups', 'issues.closedBy']);
 
         $project->loadCount([
             'issues as opened_issues' => function($query) {
