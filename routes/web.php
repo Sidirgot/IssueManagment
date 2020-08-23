@@ -1,6 +1,9 @@
 <?php
 
-Route::get('/', 'WelcomeController@main')->name('welcome');
+Route::get('/', function() {
+    return redirect()->route('login');
+});
+
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');

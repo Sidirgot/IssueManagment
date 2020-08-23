@@ -3,10 +3,20 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
+ * Intercept the request and redirect to login screen
+ * if unauthenticated.
+ * 
  */
+axios.interceptors.response.use((response) => {
+    return response
+
+}, ((error) => {
+    
+    if (error.response.status === 401) {
+        location.replace('/login')
+    } 
+
+}))
 
 import Echo from 'laravel-echo';
 

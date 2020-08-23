@@ -70,3 +70,9 @@
   }
 
 @import "tailwindcss/utilities";
+
+body {
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  font-family: DIN,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
