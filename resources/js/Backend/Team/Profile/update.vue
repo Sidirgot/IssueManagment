@@ -4,7 +4,7 @@
             <div class="flex flex-col md:flex-row  justify-between items-center">
                 <h1 class="self-start text-xl text-gray-600">Update Profile</h1>
 
-                <button @click="$modal.hide('updateProfile')" class="self-end btn btn-teal text-white mx-2"><i class="fas fa-times"></i></button>
+                <button @click="$modal.hide('updateProfile')" class="self-end btn btn-teal text-white mx-2">X</button>
             </div>
 
             <form class="my-3 mx-3">
@@ -29,7 +29,7 @@
                     <input type="password" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" v-model="auth_user.password_confirmation" autocomplete="new-password">
                 </div>
 
-                <button @click.prevent="updateProfile" class="btn btn-teal my-2 w-full">Update Profile <i class="fas fa-check"></i></button>
+                <button @click.prevent="updateProfile" class="btn btn-teal mt-6 mb-2 w-full">Save Changes</button>
             </form>
         </div>
     </modal>
