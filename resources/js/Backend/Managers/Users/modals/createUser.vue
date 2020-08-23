@@ -4,39 +4,39 @@
             <div class="flex flex-col md:flex-row  justify-between items-center">
                 <h1 class="self-start text-xl text-gray-600">Create New User </h1>
 
-                <button @click="$modal.hide('create-user')" class="self-end btn btn-teal text-white mx-2"><i class="fas fa-times"></i></button>
+                <button @click="$modal.hide('create-user')" class="self-end btn btn-teal text-white mx-2">X</button>
             </div>
 
             <form class="my-3 mx-3" method="post">
                 <div class="my-2">
                     <label for="name">Name</label>
-                    <input type="text" v-model="user.name" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" placeholder="Name" required>
+                    <input type="text" v-model="user.name" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" placeholder="Name" required>
                 </div>
 
                 <div class="my-2">
                     <label for="email">Email</label>
-                    <input type="text" v-model="user.email" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" placeholder="Email" required>
+                    <input type="text" v-model="user.email" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" placeholder="Email" required>
                 </div>
 
                 <div class="my-2">
                     <label for="password">Password</label>
-                    <input type="password" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" v-model="user.password" required>
+                    <input type="password" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" v-model="user.password" required>
                 </div>
 
                 <div class="my-2">
                     <label for="password_confirmation">Confirm Password</label>
-                    <input type="password" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" v-model="user.password_confirmation" required>
+                    <input type="password" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" v-model="user.password_confirmation" required>
                 </div>
 
                 <div class="my-2">
                     <label for="role">Role</label>
-                    <select v-model="user.role" class="appearance-none block bg-gray-200 p-2 my-2 ml-3 rounded w-full" required>
+                    <select v-model="user.role" class="appearance-none block bg-gray-300 p-2 my-2 ml-3 rounded w-full" required>
                         <option value="tester">Tester</option>
                         <option value="developer">Developer</option>
                     </select>
                 </div>
 
-                <button @click.prevent="createUser" class="btn btn-teal my-2 w-full">Create User <i class="fas fa-check"></i></button>
+                <button @click.prevent="createUser" class="btn btn-teal mt-6 mb-2 w-full">Create</button>
             </form>
         </div>
     </modal>

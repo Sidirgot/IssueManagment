@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="<?php echo e(mix('css/app.css')); ?>">
     </head>
-    <body class="bg-gray-200">
+    <body class="bg-gray-300">
 
         <div id="app">
             <backend></backend>

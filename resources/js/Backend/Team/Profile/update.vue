@@ -11,22 +11,22 @@
 
                 <div class="my-2">
                     <label for="name">Name</label>
-                    <input type="text" v-model="auth_user.name" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" placeholder="Name">
+                    <input type="text" v-model="auth_user.name" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" placeholder="Name">
                 </div>
 
                 <div class="my-2">
                     <label for="email">Email</label>
-                    <input type="text" v-model="auth_user.email" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" placeholder="Email">
+                    <input type="text" v-model="auth_user.email" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" placeholder="Email">
                 </div>
 
                 <div class="my-2">
                     <label for="password">Password</label>
-                    <input type="password" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" v-model="auth_user.password" autocomplete="new-password">
+                    <input type="password" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" v-model="auth_user.password" autocomplete="new-password">
                 </div>
 
                 <div class="my-2">
                     <label for="password_confirmation">Confirm Password</label>
-                    <input type="password" class="p-2 my-2 bg-gray-200 rounded block ml-3 w-full" v-model="auth_user.password_confirmation" autocomplete="new-password">
+                    <input type="password" class="p-2 my-2 bg-gray-300 rounded block ml-3 w-full" v-model="auth_user.password_confirmation" autocomplete="new-password">
                 </div>
 
                 <button @click.prevent="updateProfile" class="btn btn-teal mt-6 mb-2 w-full">Save Changes</button>

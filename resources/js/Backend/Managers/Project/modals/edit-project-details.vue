@@ -4,7 +4,7 @@
             <div class="flex flex-col md:flex-row  justify-between items-center">
                 <h1 class="self-start text-xl text-gray-600">Update Project Details</h1>
 
-                <button @click="$modal.hide('edit-project-details')" class="self-end btn btn-teal text-white mx-2"><i class="fas fa-times"></i></button>
+                <button @click="$modal.hide('edit-project-details')" class="self-end btn btn-teal text-white mx-2">X</button>
             </div>
 
             <loading></loading>
@@ -14,12 +14,12 @@
                 <div class="p-2 my-3 md:mx-2 w-full">
                     <div class="my-2">
                         <label for="title">Title</label>
-                        <input type="text" v-model="project.title" class="p-2 my-2 bg-gray-200 rounded block w-full" placeholder="Title" required>
+                        <input type="text" v-model="project.title" class="p-2 my-2 bg-gray-300 rounded block w-full" placeholder="Title" required>
                     </div>
 
                     <div class="my-2">
                         <label for="description">Description</label>
-                        <textarea v-model="project.description" class="p-2 my-2 bg-gray-200 rounded block w-full" placeholder="Projects Description" cols="30" rows="10" required></textarea>
+                        <textarea v-model="project.description" class="p-2 my-2 bg-gray-300 rounded block w-full" placeholder="Projects Description" cols="30" rows="10" required></textarea>
                     </div>
 
                 </div>

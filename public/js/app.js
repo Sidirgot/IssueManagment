@@ -1939,6 +1939,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2145,6 +2155,61 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'close_issue',
+  data: function data() {
+    return {
+      issue: {}
+    };
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])('projects', ['project'])),
+  methods: {
+    beforeOpen: function beforeOpen(event) {
+      this.issue = event.params.issue;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Backend/Issues/modals/openNewIssue.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Backend/Issues/modals/openNewIssue.vue?vue&type=script&lang=js& ***!
@@ -2320,6 +2385,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2364,6 +2439,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../partials/loading */ "./resources/js/Backend/partials/loading.vue");
 /* harmony import */ var _Followups_followups__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Followups/followups */ "./resources/js/Backend/Followups/followups.vue");
 /* harmony import */ var _Followups_modals_createfollowup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Followups/modals/createfollowup */ "./resources/js/Backend/Followups/modals/createfollowup.vue");
+/* harmony import */ var _modals_closeIssue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modals/closeIssue */ "./resources/js/Backend/Issues/modals/closeIssue.vue");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2475,6 +2551,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -2484,7 +2582,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   components: {
     loading: _partials_loading__WEBPACK_IMPORTED_MODULE_1__["default"],
     followups: _Followups_followups__WEBPACK_IMPORTED_MODULE_2__["default"],
-    createFollowup: _Followups_modals_createfollowup__WEBPACK_IMPORTED_MODULE_3__["default"]
+    createFollowup: _Followups_modals_createfollowup__WEBPACK_IMPORTED_MODULE_3__["default"],
+    closeIssue: _modals_closeIssue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   created: function created() {
     if (!this.project.id) {
@@ -2591,6 +2690,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2645,6 +2749,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3022,6 +3137,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3285,6 +3407,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3336,6 +3477,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
 //
 //
 //
@@ -3435,6 +3580,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3466,6 +3619,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
 //
 //
 //
@@ -3530,6 +3687,31 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3941,6 +4123,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'pagination',
@@ -4046,6 +4233,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15606,7 +15799,7 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "flex justify-between items-center bg-gray-200 p-2 rounded border"
+                            "flex justify-between items-center bg-gray-300 p-2 rounded border"
                         },
                         [
                           _c("h1", {
@@ -15631,7 +15824,28 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_c("i", { staticClass: "fas fa-trash" })]
+                                  [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "mx-1",
+                                        attrs: {
+                                          width: "20",
+                                          height: "20",
+                                          viewBox: "0 0 20 20"
+                                        }
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            fill: "#E53E3E",
+                                            d:
+                                              "M17.114,3.923h-4.589V2.427c0-0.252-0.207-0.459-0.46-0.459H7.935c-0.252,0-0.459,0.207-0.459,0.459v1.496h-4.59c-0.252,0-0.459,0.205-0.459,0.459c0,0.252,0.207,0.459,0.459,0.459h1.51v12.732c0,0.252,0.207,0.459,0.459,0.459h10.29c0.254,0,0.459-0.207,0.459-0.459V4.841h1.511c0.252,0,0.459-0.207,0.459-0.459C17.573,4.127,17.366,3.923,17.114,3.923M8.394,2.886h3.214v0.918H8.394V2.886z M14.686,17.114H5.314V4.841h9.372V17.114z M12.525,7.306v7.344c0,0.252-0.207,0.459-0.46,0.459s-0.458-0.207-0.458-0.459V7.306c0-0.254,0.205-0.459,0.458-0.459S12.525,7.051,12.525,7.306M8.394,7.306v7.344c0,0.252-0.207,0.459-0.459,0.459s-0.459-0.207-0.459-0.459V7.306c0-0.254,0.207-0.459,0.459-0.459S8.394,7.051,8.394,7.306"
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
                                 _c(
@@ -15647,7 +15861,28 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_c("i", { staticClass: "fas fa-edit" })]
+                                  [
+                                    _c(
+                                      "svg",
+                                      {
+                                        staticClass: "mx-1",
+                                        attrs: {
+                                          width: "20",
+                                          height: "20",
+                                          viewBox: "0 0 20 20"
+                                        }
+                                      },
+                                      [
+                                        _c("path", {
+                                          attrs: {
+                                            fill: "#b7791f",
+                                            d:
+                                              "M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ]
                                 )
                               ])
                             : _vm._e()
@@ -15728,7 +15963,7 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-times" })]
+              [_vm._v("X")]
             )
           ]
         ),
@@ -15743,7 +15978,7 @@ var render = function() {
                 expression: "followup.body"
               }
             ],
-            staticClass: "p-2 bg-gray-200 w-full rounded",
+            staticClass: "p-2 bg-gray-300 w-full rounded",
             attrs: {
               id: "",
               cols: "30",
@@ -15836,7 +16071,7 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-times" })]
+              [_vm._v("X")]
             )
           ]
         ),
@@ -15844,7 +16079,7 @@ var render = function() {
         _c("form", { staticClass: "mt-4" }, [
           _c(
             "p",
-            { staticClass: "bg-gray-200 text-red-600 p-4 rounded my-6" },
+            { staticClass: "bg-gray-300 text-red-600 p-4 rounded my-6" },
             [
               _c("span", { staticClass: "text-red-600" }, [
                 _vm._v(
@@ -15928,7 +16163,7 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-times" })]
+              [_vm._v("X")]
             )
           ]
         ),
@@ -15943,7 +16178,7 @@ var render = function() {
                 expression: "followup.body"
               }
             ],
-            staticClass: "p-2 bg-gray-200 w-full rounded",
+            staticClass: "p-2 bg-gray-300 w-full rounded",
             attrs: {
               id: "",
               cols: "30",
@@ -15976,6 +16211,104 @@ var render = function() {
             [_vm._v("Update Followup")]
           )
         ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=template&id=adfac064&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=template&id=adfac064& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      attrs: {
+        name: "close_issue",
+        height: "auto",
+        adaptive: true,
+        clickToClose: false
+      },
+      on: { "before-open": _vm.beforeOpen }
+    },
+    [
+      _c("div", { staticClass: "p-6" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex flex-col md:flex-row  justify-between items-center"
+          },
+          [
+            _c("h1", { staticClass: "self-start text-xl text-gray-600" }, [
+              _vm._v("Close Issue")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "self-end btn btn-teal text-white mx-2",
+                on: {
+                  click: function($event) {
+                    return _vm.$modal.hide("close_issue")
+                  }
+                }
+              },
+              [_vm._v("X")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "my-3 mx-3",
+            attrs: { method: "post" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.openIssue($event)
+              }
+            }
+          },
+          [
+            _c(
+              "p",
+              { staticClass: "bg-gray-300 text-red-600 p-4 rounded my-6" },
+              [
+                _c("span", { staticClass: "text-red-600" }, [
+                  _vm._v("Are you certain you want to close this issue ?")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-red my-2 w-full",
+                attrs: { type: "submit" }
+              },
+              [_vm._v("Close Issue")]
+            )
+          ]
+        )
       ])
     ]
   )
@@ -16035,7 +16368,7 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-times" })]
+              [_vm._v("X")]
             )
           ]
         ),
@@ -16065,7 +16398,7 @@ var render = function() {
                     expression: "issue.title"
                   }
                 ],
-                staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+                staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
                 attrs: {
                   type: "text",
                   placeholder: "Issue Title",
@@ -16097,7 +16430,7 @@ var render = function() {
                     expression: "issue.description"
                   }
                 ],
-                staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+                staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
                 attrs: {
                   placeholder: "Issue Description",
                   required: "",
@@ -16130,7 +16463,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block bg-gray-200 p-2 my-2 ml-3 rounded w-full",
+                    "appearance-none block bg-gray-300 p-2 my-2 ml-3 rounded w-full",
                   attrs: { required: "" },
                   on: {
                     change: function($event) {
@@ -16170,7 +16503,7 @@ var render = function() {
                 staticClass: "btn btn-teal my-2 w-full",
                 attrs: { type: "submit" }
               },
-              [_vm._v("Open Issue "), _c("i", { staticClass: "fas fa-check" })]
+              [_vm._v("Open Issue")]
             )
           ]
         )
@@ -16214,14 +16547,36 @@ var render = function() {
               ? _c(
                   "button",
                   {
-                    staticClass: "btn btn-teal",
+                    staticClass: "btn btn-teal flex items-center",
                     on: {
                       click: function($event) {
                         return _vm.$modal.show("open-new-issue")
                       }
                     }
                   },
-                  [_vm._v("Open New Issue\n            "), _vm._m(0)]
+                  [
+                    _vm._v("Open New Issue\n                "),
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "mx-1",
+                        attrs: {
+                          width: "20",
+                          height: "20",
+                          viewBox: "0 0 20 20"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "#fff",
+                            d:
+                              "M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"
+                          }
+                        })
+                      ]
+                    )
+                  ]
                 )
               : _vm._e()
           ]),
@@ -16237,7 +16592,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "bg-gray-200 p-3 rounded flex flex-col md:flex-row items-center"
+                    "bg-gray-300 p-3 rounded flex flex-col md:flex-row items-center"
                 },
                 [
                   _c(
@@ -16252,9 +16607,10 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Opened (" + _vm._s(_vm.project.opened_issues) + ") "
-                      ),
-                      _c("i", { staticClass: "fas fa-info-circle" })
+                        "\n                    Opened (" +
+                          _vm._s(_vm.project.opened_issues) +
+                          ")\n                "
+                      )
                     ]
                   ),
                   _vm._v(" "),
@@ -16270,9 +16626,10 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "Closed (" + _vm._s(_vm.project.closed_issues) + ") "
-                      ),
-                      _c("i", { staticClass: "fas fa-check" })
+                        "\n                    Closed (" +
+                          _vm._s(_vm.project.closed_issues) +
+                          ")\n                "
+                      )
                     ]
                   )
                 ]
@@ -16348,14 +16705,37 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _c("span", { staticClass: "self-end" }, [
-                            _c("i", { staticClass: "far fa-comments" }),
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(issue.followups.length) +
-                                "\n                "
-                            )
-                          ])
+                          _c(
+                            "span",
+                            { staticClass: "self-end flex items-center" },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "mx-1",
+                                  attrs: {
+                                    width: "20",
+                                    height: "20",
+                                    viewBox: "0 0 20 20"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      fill: "#000",
+                                      d:
+                                        "M17.659,3.681H8.468c-0.211,0-0.383,0.172-0.383,0.383v2.681H2.341c-0.21,0-0.383,0.172-0.383,0.383v6.126c0,0.211,0.172,0.383,0.383,0.383h1.532v2.298c0,0.566,0.554,0.368,0.653,0.27l2.569-2.567h4.437c0.21,0,0.383-0.172,0.383-0.383v-2.681h1.013l2.546,2.567c0.242,0.249,0.652,0.065,0.652-0.27v-2.298h1.533c0.211,0,0.383-0.172,0.383-0.382V4.063C18.042,3.853,17.87,3.681,17.659,3.681 M11.148,12.87H6.937c-0.102,0-0.199,0.04-0.27,0.113l-2.028,2.025v-1.756c0-0.211-0.172-0.383-0.383-0.383H2.724V7.51h5.361v2.68c0,0.21,0.172,0.382,0.383,0.382h2.68V12.87z M17.276,9.807h-1.533c-0.211,0-0.383,0.172-0.383,0.383v1.755L13.356,9.92c-0.07-0.073-0.169-0.113-0.27-0.113H8.851v-5.36h8.425V9.807z"
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(issue.followups.length) +
+                                  "\n                    "
+                              )
+                            ]
+                          )
                         ]
                       )
                     }),
@@ -16431,14 +16811,37 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _c("span", { staticClass: "self-end" }, [
-                            _c("i", { staticClass: "far fa-comments" }),
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(issue.followups.length) +
-                                "\n                "
-                            )
-                          ])
+                          _c(
+                            "span",
+                            { staticClass: "self-end flex items-center" },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "mx-1",
+                                  attrs: {
+                                    width: "20",
+                                    height: "20",
+                                    viewBox: "0 0 20 20"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      fill: "#000",
+                                      d:
+                                        "M17.659,3.681H8.468c-0.211,0-0.383,0.172-0.383,0.383v2.681H2.341c-0.21,0-0.383,0.172-0.383,0.383v6.126c0,0.211,0.172,0.383,0.383,0.383h1.532v2.298c0,0.566,0.554,0.368,0.653,0.27l2.569-2.567h4.437c0.21,0,0.383-0.172,0.383-0.383v-2.681h1.013l2.546,2.567c0.242,0.249,0.652,0.065,0.652-0.27v-2.298h1.533c0.211,0,0.383-0.172,0.383-0.382V4.063C18.042,3.853,17.87,3.681,17.659,3.681 M11.148,12.87H6.937c-0.102,0-0.199,0.04-0.27,0.113l-2.028,2.025v-1.756c0-0.211-0.172-0.383-0.383-0.383H2.724V7.51h5.361v2.68c0,0.21,0.172,0.382,0.383,0.382h2.68V12.87z M17.276,9.807h-1.533c-0.211,0-0.383,0.172-0.383,0.383v1.755L13.356,9.92c-0.07-0.073-0.169-0.113-0.27-0.113H8.851v-5.36h8.425V9.807z"
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(issue.followups.length) +
+                                  "\n                    "
+                              )
+                            ]
+                          )
                         ]
                       )
                     }),
@@ -16454,16 +16857,7 @@ var render = function() {
       )
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "px-2 py-1 bg-teal-700 rounded-full" }, [
-      _c("i", { staticClass: "fas fa-plus" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -16491,26 +16885,6 @@ var render = function() {
     [
       _c("loading"),
       _vm._v(" "),
-      !_vm.loading
-        ? _c(
-            "div",
-            { staticClass: "flex justify-end" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-teal",
-                  attrs: {
-                    to: { name: "show-project", params: { id: _vm.project.id } }
-                  }
-                },
-                [_vm._v("Back "), _c("i", { staticClass: "fas fa-undo" })]
-              )
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
       !_vm.loading && _vm.issue.status === "closed"
         ? _c(
             "div",
@@ -16532,19 +16906,95 @@ var render = function() {
       _vm._v(" "),
       !_vm.loading
         ? _c("div", { staticClass: "my-3" }, [
-            _c("h1", {
-              staticClass: "text-xl",
-              domProps: { textContent: _vm._s(_vm.issue.title) }
-            }),
+            _c(
+              "h1",
+              { staticClass: "text-xl flex items-center" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-teal flex items-center mr-2",
+                    attrs: {
+                      to: {
+                        name: "show-project",
+                        params: { id: _vm.project.id }
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "inline-block",
+                        attrs: {
+                          width: "20",
+                          height: "20",
+                          viewBox: "0 0 20 20"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "#fff",
+                            d:
+                              "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "btn btn-red flex items-center mr-1 whitespace-no-wrap",
+                    on: {
+                      click: function($event) {
+                        return _vm.$modal.show("close_issue", {
+                          issue: _vm.issue
+                        })
+                      }
+                    }
+                  },
+                  [
+                    _vm._v("\n        Close Issue\n          "),
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "mx-1",
+                        attrs: {
+                          width: "20",
+                          height: "20",
+                          viewBox: "0 0 20 20"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "#fff",
+                            d:
+                              "M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v("\n    \n      " + _vm._s(_vm.issue.title) + "\n    ")
+              ],
+              1
+            ),
             _vm._v(" "),
             _c(
               "div",
               {
                 staticClass:
-                  "flex justify-between items-center ml-2 text-gray-600 mt-2"
+                  "flex justify-between flex-wrap items-center ml-2 text-gray-600 mt-2"
               },
               [
-                _c("div", [
+                _c("div", { staticClass: "whitespace-no-wrap my-1" }, [
                   _c(
                     "span",
                     {
@@ -16578,19 +17028,8 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass: "btn btn-yellow",
-                          on: { click: _vm.closeIssue }
-                        },
-                        [
-                          _vm._v("Close Issue "),
-                          _c("i", { staticClass: "fas fa-lock" })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-teal",
+                          staticClass:
+                            "btn btn-teal flex items-center ml-1 whitespace-no-wrap",
                           on: {
                             click: function($event) {
                               return _vm.$modal.show("create-followup")
@@ -16598,8 +17037,27 @@ var render = function() {
                           }
                         },
                         [
-                          _vm._v("\n          Open followup\n          "),
-                          _vm._m(0)
+                          _vm._v("\n          Open followup\n            "),
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "mx-1",
+                              attrs: {
+                                width: "20",
+                                height: "20",
+                                viewBox: "0 0 20 20"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  fill: "#fff",
+                                  d:
+                                    "M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
                     ])
@@ -16617,7 +17075,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "flex justify-between items-center bg-gray-200 p-2 rounded border"
+                      "flex justify-between items-center bg-gray-300 p-2 rounded border"
                   },
                   [
                     _c("h1", {
@@ -16627,8 +17085,32 @@ var render = function() {
                     _vm.issueOwner && _vm.issue.status === "opened"
                       ? _c(
                           "button",
-                          { staticClass: "text-yellow-700 text-sm" },
-                          [_c("i", { staticClass: "fas fa-edit" })]
+                          {
+                            staticClass:
+                              "text-yellow-700 text-sm flex items-center"
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "mx-1",
+                                attrs: {
+                                  width: "20",
+                                  height: "20",
+                                  viewBox: "0 0 20 20"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    fill: "#b7791f",
+                                    d:
+                                      "M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
                         )
                       : _vm._e()
                   ]
@@ -16757,21 +17239,14 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v(" "),
-      _c("createFollowup")
+      _c("createFollowup"),
+      _vm._v(" "),
+      _c("closeIssue")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "px-2 py-1 bg-teal-700 rounded-full" }, [
-      _c("i", { staticClass: "fas fa-plus" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -16832,20 +17307,37 @@ var render = function() {
     [
       _c(
         "div",
-        { staticClass: "flex justify-between items-center" },
+        { staticClass: "flex items-center" },
         [
-          _c("h1", { staticClass: "text-xl text-gray-600" }, [
-            _vm._v("Create New Project")
-          ]),
-          _vm._v(" "),
           _c(
             "router-link",
             {
-              staticClass: "self-end btn btn-teal text-white",
+              staticClass: "self-end btn btn-teal text-white mr-2",
               attrs: { to: { name: "projects-index" } }
             },
-            [_vm._v("Back "), _c("i", { staticClass: "fas fa-undo" })]
-          )
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "inline-block",
+                  attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      fill: "#fff",
+                      d:
+                        "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
+                    }
+                  })
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("h1", { staticClass: "text-xl text-gray-600" }, [
+            _vm._v("Create New Project")
+          ])
         ],
         1
       ),
@@ -16880,7 +17372,7 @@ var render = function() {
                           }
                         ],
                         staticClass:
-                          "p-2 my-2 bg-gray-200 rounded block w-full",
+                          "p-2 my-2 bg-gray-300 rounded block w-full",
                         attrs: {
                           type: "text",
                           placeholder: "Title",
@@ -16913,7 +17405,7 @@ var render = function() {
                           }
                         ],
                         staticClass:
-                          "p-2 my-2 bg-gray-200 rounded block w-full",
+                          "p-2 my-2 bg-gray-300 rounded block w-full",
                         attrs: {
                           id: "description",
                           placeholder: "Projects Description",
@@ -16949,10 +17441,7 @@ var render = function() {
                             }
                           }
                         },
-                        [
-                          _vm._v("Create Project "),
-                          _c("i", { staticClass: "fas fa-check" })
-                        ]
+                        [_vm._v("Create Project")]
                       )
                     ])
                   ]
@@ -16991,33 +17480,6 @@ var render = function() {
     "div",
     { staticClass: "container mx-auto" },
     [
-      _c(
-        "div",
-        {
-          staticClass: "flex flex-col md:flex-row justify-between items-center"
-        },
-        [
-          _c(
-            "h1",
-            { staticClass: "self-start text-xl text-gray-600 my-3 md:my-0" },
-            [_vm._v("Project Management")]
-          ),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass: "self-end btn btn-teal text-white",
-              attrs: { to: { name: "projects-create" } }
-            },
-            [
-              _vm._v("Create New Project "),
-              _c("i", { staticClass: "fas fa-plus" })
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
       _c("loading"),
       _vm._v(" "),
       _c(
@@ -17034,6 +17496,52 @@ var render = function() {
           staticClass: "bg-white rounded shadow-lg p-3 mt-4 mx-2"
         },
         [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-col md:flex-row justify-between items-center my-2"
+            },
+            [
+              _c(
+                "h1",
+                {
+                  staticClass: "self-start text-xl text-gray-600 my-3 md:my-0"
+                },
+                [_vm._v("Projects Table")]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "self-end btn btn-teal text-white flex items-center",
+                  attrs: { to: { name: "projects-create" } }
+                },
+                [
+                  _vm._v("\n                New Project\n\n                "),
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "mx-1",
+                      attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          fill: "#fff",
+                          d:
+                            "M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c(
             "table",
             { staticClass: "table-fixed w-full  text-center text-sm" },
@@ -17062,16 +17570,17 @@ var render = function() {
                       "tr",
                       {
                         key: project.id,
-                        staticClass: "border-b border-gray-200"
+                        staticClass:
+                          "border-b border-gray-300 leading-8 odd:bg-white even:bg-gray-300"
                       },
                       [
                         _c(
                           "td",
-                          { staticClass: "leading-loose" },
+                          { staticClass: "leading-loose py-2" },
                           [
                             _c("router-link", {
                               staticClass:
-                                "text-teal-500 font-bold hover:text-teal-700",
+                                "text-teal-500 font-bold hover:text-teal-700 transition duration-700",
                               attrs: {
                                 to: {
                                   name: "show-project",
@@ -17084,7 +17593,7 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _c("td", { staticClass: "leading-loose" }, [
+                        _c("td", { staticClass: "leading-loose py-2" }, [
                           project.status === "opened"
                             ? _c(
                                 "span",
@@ -17104,7 +17613,7 @@ var render = function() {
                               )
                         ]),
                         _vm._v(" "),
-                        _c("td", { staticClass: "leading-loose" }, [
+                        _c("td", { staticClass: "leading-loose py-2" }, [
                           _c(
                             "span",
                             {
@@ -17150,7 +17659,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "bg-gray-200 rounded" }, [
+    return _c("thead", { staticClass: "bg-gray-300 leading-10 rounded" }, [
       _c("th", { staticClass: "py-2" }, [_vm._v("Title")]),
       _vm._v(" "),
       _c("th", { staticClass: "py-2" }, [_vm._v("Status")]),
@@ -17216,7 +17725,7 @@ var render = function() {
                     }
                   }
                 },
-                [_c("i", { staticClass: "fas fa-times" })]
+                [_vm._v("X")]
               )
             ]
           ),
@@ -17244,7 +17753,7 @@ var render = function() {
                           }
                         ],
                         staticClass:
-                          "p-2 my-2 bg-gray-200 rounded block w-full",
+                          "p-2 my-2 bg-gray-300 rounded block w-full",
                         attrs: {
                           type: "text",
                           placeholder: "Title",
@@ -17277,7 +17786,7 @@ var render = function() {
                           }
                         ],
                         staticClass:
-                          "p-2 my-2 bg-gray-200 rounded block w-full",
+                          "p-2 my-2 bg-gray-300 rounded block w-full",
                         attrs: {
                           placeholder: "Projects Description",
                           cols: "30",
@@ -17373,7 +17882,7 @@ var render = function() {
             },
             [
               _c("h1", { staticClass: "self-start text-xl text-gray-600" }, [
-                _vm._v("Update Project Testers")
+                _vm._v("Update Project Developers")
               ]),
               _vm._v(" "),
               _c(
@@ -17386,7 +17895,7 @@ var render = function() {
                     }
                   }
                 },
-                [_c("i", { staticClass: "fas fa-times" })]
+                [_vm._v("X")]
               )
             ]
           ),
@@ -17421,7 +17930,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block bg-gray-200 p-2 mt-2 mb-8 rounded w-full",
+                    "appearance-none block bg-gray-300 p-2 mt-2 mb-8 rounded w-full",
                   attrs: { required: "" },
                   on: {
                     change: function($event) {
@@ -17465,7 +17974,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "flex flex-wrap w-full p-3 bg-gray-200 rounded my-2"
+                      "flex flex-wrap w-full p-3 bg-gray-300 rounded my-2"
                   },
                   _vm._l(_vm.project.project_developers, function(developer) {
                     return _c(
@@ -17485,7 +17994,7 @@ var render = function() {
                           "button",
                           {
                             staticClass:
-                              "bg-teal-700 text-sm hover:opacity-50 px-1 my-1 rounded",
+                              "bg-teal-700 text-sm hover:opacity-50 px-2 my-1 rounded",
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
@@ -17493,7 +18002,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_c("i", { staticClass: "fas fa-times" })]
+                          [_vm._v("x")]
                         )
                       ]
                     )
@@ -17588,7 +18097,7 @@ var render = function() {
                     }
                   }
                 },
-                [_c("i", { staticClass: "fas fa-times" })]
+                [_vm._v("X")]
               )
             ]
           ),
@@ -17623,7 +18132,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block bg-gray-200 p-2 mt-2 mb-8 rounded w-full",
+                    "appearance-none block bg-gray-300 p-2 mt-2 mb-8 rounded w-full",
                   attrs: { required: "" },
                   on: {
                     change: function($event) {
@@ -17667,7 +18176,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "flex flex-wrap w-full p-3 bg-gray-200 rounded my-2"
+                      "flex flex-wrap w-full p-3 bg-gray-300 rounded my-2"
                   },
                   _vm._l(_vm.project.project_testers, function(tester) {
                     return _c(
@@ -17687,7 +18196,7 @@ var render = function() {
                           "button",
                           {
                             staticClass:
-                              "bg-teal-700 text-sm hover:opacity-50 px-1 my-1 rounded",
+                              "bg-teal-700 text-sm hover:opacity-50 px-2 my-1 rounded",
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
@@ -17695,7 +18204,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_c("i", { staticClass: "fas fa-times" })]
+                          [_vm._v("x")]
                         )
                       ]
                     )
@@ -17757,34 +18266,6 @@ var render = function() {
     "div",
     { staticClass: "container mx-auto" },
     [
-      _c(
-        "div",
-        {
-          staticClass: "flex flex-col md:flex-row justify-between items-center"
-        },
-        [
-          _c(
-            "h1",
-            { staticClass: "self-start text-xl text-gray-600 my-3 md:my-0" },
-            [_vm._v("User Management")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-teal text-white mx-2",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.$modal.show("create-user")
-                }
-              }
-            },
-            [_vm._v("Add New User "), _c("i", { staticClass: "fas fa-plus" })]
-          )
-        ]
-      ),
-      _vm._v(" "),
       _c("loading"),
       _vm._v(" "),
       _c(
@@ -17801,6 +18282,54 @@ var render = function() {
           staticClass: "bg-white rounded shadow-lg p-3 mt-4 mx-2"
         },
         [
+          _c(
+            "div",
+            {
+              staticClass: "flex flex-wrap justify-between items-center py-4 "
+            },
+            [
+              _c(
+                "h1",
+                {
+                  staticClass: "self-start text-xl text-gray-600 my-3 md:my-0"
+                },
+                [_vm._v("Users Table")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-teal text-white mx-2 flex items-center",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.$modal.show("create-user")
+                    }
+                  }
+                },
+                [
+                  _vm._v("\n                New User \n                "),
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "mx-1",
+                      attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          fill: "#fff",
+                          d:
+                            "M14.613,10c0,0.23-0.188,0.419-0.419,0.419H10.42v3.774c0,0.23-0.189,0.42-0.42,0.42s-0.419-0.189-0.419-0.42v-3.774H5.806c-0.23,0-0.419-0.189-0.419-0.419s0.189-0.419,0.419-0.419h3.775V5.806c0-0.23,0.189-0.419,0.419-0.419s0.42,0.189,0.42,0.419v3.775h3.774C14.425,9.581,14.613,9.77,14.613,10 M17.969,10c0,4.401-3.567,7.969-7.969,7.969c-4.402,0-7.969-3.567-7.969-7.969c0-4.402,3.567-7.969,7.969-7.969C14.401,2.031,17.969,5.598,17.969,10 M17.13,10c0-3.932-3.198-7.13-7.13-7.13S2.87,6.068,2.87,10c0,3.933,3.198,7.13,7.13,7.13S17.13,13.933,17.13,10"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
           _c(
             "table",
             { staticClass: "table-fixed w-full rounded text-center text-sm" },
@@ -17827,16 +18356,21 @@ var render = function() {
                   _vm._l(_vm.users, function(user) {
                     return _c(
                       "tr",
-                      { key: user.id, staticClass: "border-b border-gray-200" },
+                      {
+                        key: user.id,
+                        staticClass:
+                          "border-b border-gray-300 leading-8 odd:bg-white even:bg-gray-300"
+                      },
                       [
                         _c(
                           "td",
-                          { staticClass: "leading-loose" },
+                          { staticClass: "leading-loose py-2" },
                           [
                             _c(
                               "router-link",
                               {
-                                staticClass: "text-teal-500 font-bold",
+                                staticClass:
+                                  "text-teal-600 font-bold hover:opacity-50 transition duration-700",
                                 attrs: {
                                   to: {
                                     name: "users-show",
@@ -17851,7 +18385,7 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("td", {
-                          staticClass: "leading-loose",
+                          staticClass: "leading-loose py-2",
                           domProps: { textContent: _vm._s(user.email) }
                         })
                       ]
@@ -17892,7 +18426,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "bg-gray-200" }, [
+    return _c("thead", { staticClass: "bg-gray-300 leading-10" }, [
       _c("th", { staticClass: "py-2" }, [_vm._v("Name")]),
       _vm._v(" "),
       _c("th", { staticClass: "py-2" }, [_vm._v("Email")])
@@ -17953,7 +18487,7 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-times" })]
+              [_vm._v("X")]
             )
           ]
         ),
@@ -17971,7 +18505,7 @@ var render = function() {
                   expression: "user.name"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "text", placeholder: "Name", required: "" },
               domProps: { value: _vm.user.name },
               on: {
@@ -17997,7 +18531,7 @@ var render = function() {
                   expression: "user.email"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "text", placeholder: "Email", required: "" },
               domProps: { value: _vm.user.email },
               on: {
@@ -18023,7 +18557,7 @@ var render = function() {
                   expression: "user.password"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "password", required: "" },
               domProps: { value: _vm.user.password },
               on: {
@@ -18051,7 +18585,7 @@ var render = function() {
                   expression: "user.password_confirmation"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "password", required: "" },
               domProps: { value: _vm.user.password_confirmation },
               on: {
@@ -18084,7 +18618,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block bg-gray-200 p-2 my-2 ml-3 rounded w-full",
+                  "appearance-none block bg-gray-300 p-2 my-2 ml-3 rounded w-full",
                 attrs: { required: "" },
                 on: {
                   change: function($event) {
@@ -18119,7 +18653,7 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-teal my-2 w-full",
+              staticClass: "btn btn-teal mt-6 mb-2 w-full",
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -18127,7 +18661,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Create User "), _c("i", { staticClass: "fas fa-check" })]
+            [_vm._v("Create")]
           )
         ])
       ])
@@ -18189,7 +18723,7 @@ var render = function() {
                   }
                 }
               },
-              [_c("i", { staticClass: "fas fa-times" })]
+              [_vm._v("X")]
             )
           ]
         ),
@@ -18207,7 +18741,7 @@ var render = function() {
                   expression: "user.name"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "text", placeholder: "Name" },
               domProps: { value: _vm.user.name },
               on: {
@@ -18233,7 +18767,7 @@ var render = function() {
                   expression: "user.email"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "text", placeholder: "Email" },
               domProps: { value: _vm.user.email },
               on: {
@@ -18259,7 +18793,7 @@ var render = function() {
                   expression: "user.password"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "password", autocomplete: "new-password" },
               domProps: { value: _vm.user.password },
               on: {
@@ -18287,7 +18821,7 @@ var render = function() {
                   expression: "user.password_confirmation"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "password", autocomplete: "new-password" },
               domProps: { value: _vm.user.password_confirmation },
               on: {
@@ -18320,7 +18854,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block bg-gray-200 p-2 my-2 ml-3 rounded w-full",
+                  "appearance-none block bg-gray-300 p-2 my-2 ml-3 rounded w-full",
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -18362,7 +18896,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Update User "), _c("i", { staticClass: "fas fa-check" })]
+            [_vm._v("Update User")]
           )
         ])
       ])
@@ -18396,60 +18930,104 @@ var render = function() {
     { staticClass: "container mx-auto" },
     [
       _c(
+        "router-link",
+        { staticClass: "btn btn-teal", attrs: { to: { name: "users-index" } } },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "inline-block",
+              attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  fill: "#fff",
+                  d:
+                    "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
+                }
+              })
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
         "div",
         {
-          staticClass: "flex flex-col md:flex-row justify-between items-center"
+          staticClass:
+            "flex flex-col md:flex-row justify-between items-center mt-2"
         },
         [
           _c(
             "h1",
             { staticClass: "self-start text-lg text-gray-600 my-3 md:my-0" },
-            [_vm._v("Users Profile")]
+            [_vm._v("\n            Users Profile\n        ")]
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "self-end flex" },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-red text-white mx-2",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.$modal.show("user-delete")
-                    }
+          _c("div", { staticClass: "self-end flex" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-red text-white mx-2",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.$modal.show("user-delete")
                   }
-                },
-                [_c("i", { staticClass: "fas fa-trash" })]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-yellow text-white mx-2",
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.$modal.show("edit-user")
-                    }
+                }
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "mx-1",
+                    attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        fill: "#fff",
+                        d:
+                          "M17.114,3.923h-4.589V2.427c0-0.252-0.207-0.459-0.46-0.459H7.935c-0.252,0-0.459,0.207-0.459,0.459v1.496h-4.59c-0.252,0-0.459,0.205-0.459,0.459c0,0.252,0.207,0.459,0.459,0.459h1.51v12.732c0,0.252,0.207,0.459,0.459,0.459h10.29c0.254,0,0.459-0.207,0.459-0.459V4.841h1.511c0.252,0,0.459-0.207,0.459-0.459C17.573,4.127,17.366,3.923,17.114,3.923M8.394,2.886h3.214v0.918H8.394V2.886z M14.686,17.114H5.314V4.841h9.372V17.114z M12.525,7.306v7.344c0,0.252-0.207,0.459-0.46,0.459s-0.458-0.207-0.458-0.459V7.306c0-0.254,0.205-0.459,0.458-0.459S12.525,7.051,12.525,7.306M8.394,7.306v7.344c0,0.252-0.207,0.459-0.459,0.459s-0.459-0.207-0.459-0.459V7.306c0-0.254,0.207-0.459,0.459-0.459S8.394,7.051,8.394,7.306"
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-yellow text-white mx-2",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.$modal.show("edit-user")
                   }
-                },
-                [_vm._v("Edit "), _c("i", { staticClass: "fas fa-edit" })]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "btn btn-teal text-white",
-                  attrs: { to: { name: "users-index" } }
-                },
-                [_vm._v("Back "), _c("i", { staticClass: "fas fa-undo" })]
-              )
-            ],
-            1
-          )
+                }
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "mx-1",
+                    attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        fill: "#fff",
+                        d:
+                          "M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+                      }
+                    })
+                  ]
+                )
+              ]
+            )
+          ])
         ]
       ),
       _vm._v(" "),
@@ -18474,7 +19052,7 @@ var render = function() {
             _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
             _vm._v(" "),
             _c("pre", {
-              staticClass: "bg-gray-200 p-2 ml-3 my-2",
+              staticClass: "bg-gray-300 p-2 ml-3 my-2",
               domProps: { textContent: _vm._s(_vm.user.name) }
             })
           ]),
@@ -18483,7 +19061,7 @@ var render = function() {
             _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
             _vm._v(" "),
             _c("pre", {
-              staticClass: "bg-gray-200 p-2 ml-3 my-2",
+              staticClass: "bg-gray-300 p-2 ml-3 my-2",
               domProps: { textContent: _vm._s(_vm.user.email) }
             })
           ]),
@@ -18492,7 +19070,7 @@ var render = function() {
             _c("label", { attrs: { for: "role" } }, [_vm._v("Role")]),
             _vm._v(" "),
             _c("pre", {
-              staticClass: "bg-gray-200 p-2 ml-3 my-2",
+              staticClass: "bg-gray-300 p-2 ml-3 my-2",
               domProps: { textContent: _vm._s(_vm.user.role) }
             })
           ])
@@ -18534,12 +19112,12 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Cancel")]
+                  [_vm._v("X")]
                 )
               ]
             ),
             _vm._v(" "),
-            _c("p", { staticClass: "bg-gray-200 p-4 rounded my-6" }, [
+            _c("p", { staticClass: "bg-gray-300 p-4 rounded my-6" }, [
               _vm._v("\n                Are you sure you want to delete "),
               _c("span", { staticClass: "text-red-600" }, [
                 _vm._v(_vm._s(_vm.user.name))
@@ -18605,14 +19183,36 @@ var render = function() {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-yellow",
+                      staticClass:
+                        "hover:opacity-50 transition-opacity duration-700 focus:outline-none",
                       on: {
                         click: function($event) {
                           return _vm.$modal.show("edit-project-details")
                         }
                       }
                     },
-                    [_vm._v("Edit "), _c("i", { staticClass: "fas fa-edit" })]
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "mx-1",
+                          attrs: {
+                            width: "20",
+                            height: "20",
+                            viewBox: "0 0 20 20"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "#b7791f",
+                              d:
+                                "M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+                            }
+                          })
+                        ]
+                      )
+                    ]
                   )
                 ]
               )
@@ -18671,7 +19271,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("p", {
-              staticClass: "bg-gray-200 p-2 ml-3 rounded",
+              staticClass: "bg-gray-300 p-2 ml-3 rounded",
               domProps: { textContent: _vm._s(_vm.project.title) }
             })
           ]),
@@ -18682,7 +19282,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("p", {
-              staticClass: "bg-gray-200 p-2 ml-3 rounded tracking-wide",
+              staticClass: "bg-gray-300 p-2 ml-3 rounded tracking-wide",
               domProps: { textContent: _vm._s(_vm.project.description) }
             })
           ]),
@@ -18734,14 +19334,36 @@ var render = function() {
                   ? _c(
                       "button",
                       {
-                        staticClass: "btn btn btn-yellow",
+                        staticClass:
+                          " hover:opacity-50 transition-opacity duration-700 focus:outline-none",
                         on: {
                           click: function($event) {
                             return _vm.$modal.show("edit-testers")
                           }
                         }
                       },
-                      [_vm._v("Edit "), _c("i", { staticClass: "fas fa-edit" })]
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "mx-1",
+                            attrs: {
+                              width: "20",
+                              height: "20",
+                              viewBox: "0 0 20 20"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                fill: "#b7791f",
+                                d:
+                                  "M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+                              }
+                            })
+                          ]
+                        )
+                      ]
                     )
                   : _vm._e()
               ]
@@ -18798,14 +19420,36 @@ var render = function() {
                   ? _c(
                       "button",
                       {
-                        staticClass: "btn btn btn-yellow",
+                        staticClass:
+                          "hover:opacity-50 transition-opacity duration-700 focus:outline-none",
                         on: {
                           click: function($event) {
                             return _vm.$modal.show("edit-developers")
                           }
                         }
                       },
-                      [_vm._v("Edit "), _c("i", { staticClass: "fas fa-edit" })]
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "mx-1",
+                            attrs: {
+                              width: "20",
+                              height: "20",
+                              viewBox: "0 0 20 20"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                fill: "#b7791f",
+                                d:
+                                  "M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+                              }
+                            })
+                          ]
+                        )
+                      ]
                     )
                   : _vm._e()
               ]
@@ -18941,8 +19585,7 @@ var render = function() {
                           _c(
                             "router-link",
                             {
-                              staticClass:
-                                "bg-teal-600 text-white px-4 py-1 rounded",
+                              staticClass: "px-4 py-1 rounded",
                               attrs: {
                                 to: {
                                   name: "show-project",
@@ -18950,7 +19593,29 @@ var render = function() {
                                 }
                               }
                             },
-                            [_c("i", { staticClass: "fas fa-eye" })]
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "inline-block",
+                                  attrs: {
+                                    width: "20",
+                                    height: "20",
+                                    viewBox: "0 0 20 20"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      fill: "#319795",
+                                      stroke: "#319795",
+                                      d:
+                                        "M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z"
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
                           )
                         ],
                         1
@@ -18973,7 +19638,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "bg-gray-200 rounded leading-loose" }, [
+    return _c("thead", { staticClass: "bg-gray-300 rounded leading-loose" }, [
       _c("th", { staticClass: "py-2" }, [_vm._v("Title")]),
       _vm._v(" "),
       _c("th", { staticClass: "py-2" }, [_vm._v("Opened Issues")]),
@@ -19010,8 +19675,39 @@ var render = function() {
       _c("div", { staticClass: "flex justify-between items-center" }, [
         _c(
           "h1",
-          { staticClass: "self-start text-xl text-gray-600 mb-6 mt-2" },
-          [_vm._v("Project Details")]
+          { staticClass: "text-xl text-gray-600 mb-6 mt-2 flex items-center" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-teal",
+                attrs: { to: { name: "projects-index" } }
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "inline-block",
+                    attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        fill: "#fff",
+                        d:
+                          "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "self-end ml-2" }, [
+              _vm._v("Project Details")
+            ])
+          ],
+          1
         ),
         _vm._v(" "),
         _vm.isManager
@@ -19020,7 +19716,7 @@ var render = function() {
                 ? _c(
                     "button",
                     {
-                      staticClass: "btn btn-teal",
+                      staticClass: "btn btn-teal flex items-center",
                       on: {
                         click: function($event) {
                           $event.preventDefault()
@@ -19029,14 +19725,35 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("Close Project "),
-                      _c("i", { staticClass: "fas fa-lock" })
+                      _vm._v(
+                        "\n                Close Project\n\n                "
+                      ),
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "mx-1",
+                          attrs: {
+                            width: "20",
+                            height: "20",
+                            viewBox: "0 0 20 20"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "#fff",
+                              d:
+                                "M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878"
+                            }
+                          })
+                        ]
+                      )
                     ]
                   )
                 : _c(
                     "button",
                     {
-                      staticClass: "btn btn-blue",
+                      staticClass: "btn btn-blue flex items-center",
                       on: {
                         click: function($event) {
                           $event.preventDefault()
@@ -19045,8 +19762,37 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("Open Project "),
-                      _c("i", { staticClass: "fas fa-lock-open" })
+                      _vm._v(
+                        "\n                Open Project \n                \n                "
+                      ),
+                      _c(
+                        "svg",
+                        {
+                          staticClass: "mx-1",
+                          attrs: {
+                            width: "20",
+                            height: "20",
+                            viewBox: "0 0 20 20"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              fill: "#fff",
+                              d:
+                                "M16.198,10.896c-0.252,0-0.455,0.203-0.455,0.455v2.396c0,0.626-0.511,1.137-1.138,1.137H5.117c-0.627,0-1.138-0.511-1.138-1.137V7.852c0-0.626,0.511-1.137,1.138-1.137h5.315c0.252,0,0.456-0.203,0.456-0.455c0-0.251-0.204-0.455-0.456-0.455H5.117c-1.129,0-2.049,0.918-2.049,2.047v5.894c0,1.129,0.92,2.048,2.049,2.048h9.488c1.129,0,2.048-0.919,2.048-2.048v-2.396C16.653,11.099,16.45,10.896,16.198,10.896z"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("path", {
+                            attrs: {
+                              fill: "#fff",
+                              d:
+                                "M14.053,4.279c-0.207-0.135-0.492-0.079-0.63,0.133c-0.137,0.211-0.077,0.493,0.134,0.63l1.65,1.073c-4.115,0.62-5.705,4.891-5.774,5.082c-0.084,0.236,0.038,0.495,0.274,0.581c0.052,0.019,0.103,0.027,0.154,0.027c0.186,0,0.361-0.115,0.429-0.301c0.014-0.042,1.538-4.023,5.238-4.482l-1.172,1.799c-0.137,0.21-0.077,0.492,0.134,0.629c0.076,0.05,0.163,0.074,0.248,0.074c0.148,0,0.294-0.073,0.382-0.207l1.738-2.671c0.066-0.101,0.09-0.224,0.064-0.343c-0.025-0.118-0.096-0.221-0.197-0.287L14.053,4.279z"
+                            }
+                          })
+                        ]
+                      )
                     ]
                   )
             ])
@@ -19063,7 +19809,22 @@ var render = function() {
                 "w-full bg-teal-700 p-2 text-center text-white rounded my-2"
             },
             [
-              _c("i", { staticClass: "fas fa-lock text-3xl" }),
+              _c(
+                "svg",
+                {
+                  staticClass: "inline-block",
+                  attrs: { width: "50", height: "50", viewBox: "0 0 20 20" }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      fill: "#fff",
+                      d:
+                        "M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878"
+                    }
+                  })
+                ]
+              ),
               _vm._v(" "),
               _c("p", [
                 _vm._v("\n            You have closed this project.\n        ")
@@ -19159,7 +19920,7 @@ var render = function() {
                   expression: "auth_user.name"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "text", placeholder: "Name" },
               domProps: { value: _vm.auth_user.name },
               on: {
@@ -19185,7 +19946,7 @@ var render = function() {
                   expression: "auth_user.email"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "text", placeholder: "Email" },
               domProps: { value: _vm.auth_user.email },
               on: {
@@ -19211,7 +19972,7 @@ var render = function() {
                   expression: "auth_user.password"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "password", autocomplete: "new-password" },
               domProps: { value: _vm.auth_user.password },
               on: {
@@ -19239,7 +20000,7 @@ var render = function() {
                   expression: "auth_user.password_confirmation"
                 }
               ],
-              staticClass: "p-2 my-2 bg-gray-200 rounded block ml-3 w-full",
+              staticClass: "p-2 my-2 bg-gray-300 rounded block ml-3 w-full",
               attrs: { type: "password", autocomplete: "new-password" },
               domProps: { value: _vm.auth_user.password_confirmation },
               on: {
@@ -19826,7 +20587,21 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "fas fa-chevron-left" })]
+          [
+            _c(
+              "svg",
+              { attrs: { width: "20", height: "20", viewBox: "0 0 20 20" } },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "#fff",
+                    d:
+                      "M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"
+                  }
+                })
+              ]
+            )
+          ]
         ),
         _vm._v(" "),
         _c("span", { staticClass: "text-sm text-teal-600 mx-2" }, [
@@ -19853,7 +20628,21 @@ var render = function() {
               }
             }
           },
-          [_c("i", { staticClass: "fas fa-chevron-right" })]
+          [
+            _c(
+              "svg",
+              { attrs: { width: "20", height: "20", viewBox: "0 0 20 20" } },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "#fff",
+                    d:
+                      "M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"
+                  }
+                })
+              ]
+            )
+          ]
         )
       ])
     : _vm._e()
@@ -20100,7 +20889,7 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "focus:outline-none",
+                staticClass: "focus:outline-none flex items-center",
                 class: { "text-teal-600": _vm.open },
                 on: {
                   click: function($event) {
@@ -20109,8 +20898,27 @@ var render = function() {
                 }
               },
               [
-                _vm._v(_vm._s(_vm.auth_user.name) + " "),
-                _c("i", { staticClass: "fas fa-sort-down" })
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.auth_user.name) +
+                    "\n                \n                "
+                ),
+                _c(
+                  "svg",
+                  {
+                    staticClass: "mx-1 transform rotate-90 mt-1",
+                    attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        fill: "#319795",
+                        d:
+                          "M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"
+                      }
+                    })
+                  ]
+                )
               ]
             ),
             _vm._v(" "),
@@ -37199,6 +38007,75 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/Backend/Issues/modals/closeIssue.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/Backend/Issues/modals/closeIssue.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _closeIssue_vue_vue_type_template_id_adfac064___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./closeIssue.vue?vue&type=template&id=adfac064& */ "./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=template&id=adfac064&");
+/* harmony import */ var _closeIssue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./closeIssue.vue?vue&type=script&lang=js& */ "./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _closeIssue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _closeIssue_vue_vue_type_template_id_adfac064___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _closeIssue_vue_vue_type_template_id_adfac064___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Backend/Issues/modals/closeIssue.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_closeIssue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./closeIssue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_closeIssue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=template&id=adfac064&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=template&id=adfac064& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_closeIssue_vue_vue_type_template_id_adfac064___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./closeIssue.vue?vue&type=template&id=adfac064& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Backend/Issues/modals/closeIssue.vue?vue&type=template&id=adfac064&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_closeIssue_vue_vue_type_template_id_adfac064___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_closeIssue_vue_vue_type_template_id_adfac064___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

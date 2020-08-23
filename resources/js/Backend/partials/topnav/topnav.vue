@@ -12,7 +12,13 @@
         <div class="flex items-center">
 
             <div class="relative mx-2">
-                <button @click="open = !open" class="focus:outline-none" :class="{'text-teal-600': open}">{{ auth_user.name }} <i class="fas fa-sort-down"></i></button>
+                <button @click="open = !open" class="focus:outline-none flex items-center" :class="{'text-teal-600': open}">
+                    {{ auth_user.name }}
+                    
+                    <svg width="20" height="20" class="mx-1 transform rotate-90 mt-1" viewBox="0 0 20 20">
+                        <path fill="#319795" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+                    </svg>
+                </button>
 
                 <transition name="dropdown">
                     <div v-show="open" class="dropdown absolute bg-white shadow-xl rounded right-0 shadow-xl border">

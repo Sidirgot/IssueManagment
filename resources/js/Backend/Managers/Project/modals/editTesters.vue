@@ -4,24 +4,24 @@
             <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-200 pb-2">
                 <h1 class="self-start text-xl text-gray-600">Update Project Testers</h1>
 
-                <button @click="$modal.hide('edit-testers')" class="self-end btn btn-teal text-white mx-2"><i class="fas fa-times"></i></button>
+                <button @click="$modal.hide('edit-testers')" class="self-end btn btn-teal text-white mx-2">X</button>
             </div>
 
             <loading></loading>
 
             <div class="mt-2" v-show="! loading">
                 <label for="role">Testers</label>
-                <select v-model="selected" class="appearance-none block bg-gray-200 p-2 mt-2 mb-8 rounded w-full" required>
+                <select v-model="selected" class="appearance-none block bg-gray-300 p-2 mt-2 mb-8 rounded w-full" required>
                     <option v-if="testers.length === 0">No Testers Availiable</option>
                     <option v-for="tester in testers" :key="tester.name" :value="tester" class="text-blue" v-text="tester.name"></option>
                 </select>
 
                 <div>
                     <label>Assigned Developers: </label>
-                    <div class="flex flex-wrap w-full p-3 bg-gray-200 rounded my-2">
+                    <div class="flex flex-wrap w-full p-3 bg-gray-300 rounded my-2">
                         <span v-for="tester in project.project_testers" :key="tester.id" class="bg-teal-600 text-white rounded px-1 mx-2 my-1">
                             {{ tester.name }}
-                            <button @click.prevent="removeTester(tester)" class="bg-teal-700 text-sm hover:opacity-50 px-1 my-1 rounded" ><i class="fas fa-times"></i></button>
+                            <button @click.prevent="removeTester(tester)" class="bg-teal-700 text-sm hover:opacity-50 px-2 my-1 rounded" >x</button>
                         </span>
                     </div>
 
