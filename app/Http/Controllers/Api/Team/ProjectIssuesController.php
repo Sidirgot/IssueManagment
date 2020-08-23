@@ -40,7 +40,7 @@ class ProjectIssuesController extends Controller
 
         broadcast(new IssueCreated($issue, $project))->toOthers();
 
-        return response()->json($issue->fresh(), 201);
+        return response()->json($issue, 201);
     }
 
     /**

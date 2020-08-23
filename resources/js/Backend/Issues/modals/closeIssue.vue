@@ -7,7 +7,7 @@
                 <button @click="$modal.hide('close_issue')" class="self-end btn btn-teal text-white mx-2">X</button>
             </div>
 
-            <form @submit.prevent="openIssue" class="my-3 mx-3" method="post">
+            <form @submit.prevent="closeIssue" class="my-3 mx-3" method="post">
 
                  <p class="bg-gray-300 text-red-600 p-4 rounded my-6">
                     <span class="text-red-600">Are you certain you want to close this issue ?</span>
@@ -38,6 +38,16 @@ export default {
 
         beforeOpen(event) {
             this.issue = event.params.issue
+        },
+
+        closeIssue() {
+
+            var payload = {issue: this.issue, project: this.project}
+
+            this.$store.dispatch('issues/closeIssue', payload)
+
+            this.$router.push({name: 'show-project', params: {id:  this.$route.params.projectId}})
+
         },
     }
 }

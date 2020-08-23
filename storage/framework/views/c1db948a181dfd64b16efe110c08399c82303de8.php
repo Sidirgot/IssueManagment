@@ -7,8 +7,6 @@
         <title>Sidirgot - Application issue tracking</title>
 
         <link rel="stylesheet" href="<?php echo e(mix('css/app.css')); ?>">
-
-        <script src="<?php echo e(mix('js/app.js')); ?>"></script>
     </head>
     <body class="bg-gray-200 min-h-screen">
             <section class="flex justify-center items-center min-h-screen" id="app">

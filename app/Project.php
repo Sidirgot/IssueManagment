@@ -130,4 +130,15 @@ class Project extends Model
     {
         return $this->status == 'opened';
     }
+
+    /**
+     * Get opened projects
+     *
+     * @param [type] $query
+     * @return void
+     */
+    public function scopeOpened($query)
+    {
+        return $query->where('status', 'opened');
+    }
 }

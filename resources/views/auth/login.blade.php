@@ -7,8 +7,6 @@
         <title>Sidirgot - Application issue tracking</title>
 
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-        <script src="{{ mix('js/app.js') }}"></script>
     </head>
     <body class="bg-gray-200 min-h-screen">
             <section class="flex justify-center items-center min-h-screen" id="app">

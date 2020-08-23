@@ -3,6 +3,9 @@
 Route::middleware('auth:api')->group(function() {
     
     Route::get('/userInfo', 'Api\Auth\LoggedInUserController@user')->name('logged.in.user');
+    
+    //Dashboard
+    Route::get('/dashboard_information','Api\Team\DashboardController@dashboard' );
 
     Route::patch('/profile/update/{user}', 'Api\Team\ProfileController@update')->name('profile.update');
 
@@ -34,6 +37,10 @@ Route::middleware('auth:api')->group(function() {
 Route::middleware(['auth:api', 'role:manager'])->group(function() {
     // project resource routes
     Route::resource('/projects', 'API\Managers\ProjectsController')->except(['show']);
+
+    //Dashboard
+    Route::get('/dashborad/information','Api\Managers\DashboardController@dashboard' );
+
     // add tester / developer to a project
     Route::patch('/add/tester/{project}/{user}', 'API\Managers\ProjectTestersDevelopersController@assignTester')->name('assignTester');
     Route::patch('/add/developer/{project}/{user}', 'API\Managers\ProjectTestersDevelopersController@assignDeveloper')->name('assignDeveloper');

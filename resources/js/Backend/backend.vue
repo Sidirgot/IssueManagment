@@ -9,6 +9,11 @@
                 <router-view></router-view>
             </main>
         </div>
+        
+        <div class="text-center opacity-75">
+            Created by <a href="https://sidirgot.com/profile" target="_blank" class="text-teal-700 font-bold traking-widest hover:opacity-50">Sidirgot</a>.
+            &copy; 2020.
+        </div>
 
         <flashmessage></flashmessage>
     </div>

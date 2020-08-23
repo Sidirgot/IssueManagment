@@ -11,6 +11,22 @@
         </div>
 
         <div class="w-full md:w-2/3 bg-white rounded shadow-lg p-4 my-4 self-center">
+            <div class="my-2">
+                <span>
+                    <span class="h-3 w-3 rounded-full inline-block bg-red-600"></span>
+                    High
+                </span>
+
+                <span>
+                    <span class="h-3 w-3 rounded-full inline-block bg-yellow-600"></span>
+                    Medium
+                </span>
+
+                <span>
+                    <span class="h-3 w-3 rounded-full inline-block bg-teal-600"></span>
+                    Low
+                </span>
+            </div>
             <div class="bg-gray-300 p-3 rounded flex flex-col md:flex-row items-center">
                 <button @click="isActive = 'opened'" class="mx-2 btn btn-green my-3 md:my-0">
                     Opened ({{ project.opened_issues }})

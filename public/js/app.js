@@ -2204,6 +2204,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: {
     beforeOpen: function beforeOpen(event) {
       this.issue = event.params.issue;
+    },
+    closeIssue: function closeIssue() {
+      var payload = {
+        issue: this.issue,
+        project: this.project
+      };
+      this.$store.dispatch('issues/closeIssue', payload);
+      this.$router.push({
+        name: 'show-project',
+        params: {
+          id: this.$route.params.projectId
+        }
+      });
     }
   }
 });
@@ -2318,6 +2331,22 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2599,22 +2628,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     issueOwner: function issueOwner() {
       return this.auth_user.id === this.issue.owner.id;
     }
-  }),
-  methods: {
-    closeIssue: function closeIssue() {
-      var payload = {
-        issue: this.issue,
-        project: this.project
-      };
-      this.$store.dispatch('issues/closeIssue', payload);
-      this.$router.push({
-        name: 'show-project',
-        params: {
-          id: this.$route.params.projectId
-        }
-      });
-    }
-  }
+  })
 });
 
 /***/ }),
@@ -2628,13 +2642,123 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'manager-dashboard',
+  data: function data() {
+    return {
+      total_projects: 0,
+      total_issues: 0,
+      latest_issues: [],
+      projects: []
+    };
+  },
+  created: function created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function fetchData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/dashborad/information').then(function (response) {
+        _this.total_projects = response.data.total_projects;
+        _this.total_issues = response.data.total_issues;
+        _this.projects = response.data.projects;
+        _this.latest_issues = response.data.latest_issues;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -3648,10 +3772,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3687,6 +3807,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3850,6 +3976,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -3857,8 +3985,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'team-dashboard'
+  name: 'team-dashboard',
+  data: function data() {
+    return {
+      total_projects: 0,
+      total_issues: 0,
+      projects: []
+    };
+  },
+  created: function created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function fetchData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/dashboard_information').then(function (response) {
+        _this.total_projects = response.data.total_projects;
+        _this.total_issues = response.data.total_opened_issues;
+        _this.projects = response.data.latest_projects;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -3875,6 +4079,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./partials/sidebar */ "./resources/js/Backend/partials/sidebar.vue");
 /* harmony import */ var _partials_topnav_topnav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/topnav/topnav */ "./resources/js/Backend/partials/topnav/topnav.vue");
 /* harmony import */ var _partials_flashmessage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/flashmessage */ "./resources/js/Backend/partials/flashmessage.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16284,7 +16493,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.openIssue($event)
+                return _vm.closeIssue($event)
               }
             }
           },
@@ -16588,6 +16797,8 @@ var render = function() {
                 "w-full md:w-2/3 bg-white rounded shadow-lg p-4 my-4 self-center"
             },
             [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
                 "div",
                 {
@@ -16857,7 +17068,35 @@ var render = function() {
       )
     : _vm._e()
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "my-2" }, [
+      _c("span", [
+        _c("span", {
+          staticClass: "h-3 w-3 rounded-full inline-block bg-red-600"
+        }),
+        _vm._v("\n                    High\n                ")
+      ]),
+      _vm._v(" "),
+      _c("span", [
+        _c("span", {
+          staticClass: "h-3 w-3 rounded-full inline-block bg-yellow-600"
+        }),
+        _vm._v("\n                    Medium\n                ")
+      ]),
+      _vm._v(" "),
+      _c("span", [
+        _c("span", {
+          staticClass: "h-3 w-3 rounded-full inline-block bg-teal-600"
+        }),
+        _vm._v("\n                    Low\n                ")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -16945,43 +17184,45 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-red flex items-center mr-1 whitespace-no-wrap",
-                    on: {
-                      click: function($event) {
-                        return _vm.$modal.show("close_issue", {
-                          issue: _vm.issue
-                        })
-                      }
-                    }
-                  },
-                  [
-                    _vm._v("\n        Close Issue\n          "),
-                    _c(
-                      "svg",
+                _vm.issue.status !== "closed"
+                  ? _c(
+                      "button",
                       {
-                        staticClass: "mx-1",
-                        attrs: {
-                          width: "20",
-                          height: "20",
-                          viewBox: "0 0 20 20"
+                        staticClass:
+                          "btn btn-red flex items-center mr-1 whitespace-no-wrap",
+                        on: {
+                          click: function($event) {
+                            return _vm.$modal.show("close_issue", {
+                              issue: _vm.issue
+                            })
+                          }
                         }
                       },
                       [
-                        _c("path", {
-                          attrs: {
-                            fill: "#fff",
-                            d:
-                              "M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878"
-                          }
-                        })
+                        _vm._v("\n        Close Issue\n          "),
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "mx-1",
+                            attrs: {
+                              width: "20",
+                              height: "20",
+                              viewBox: "0 0 20 20"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                fill: "#fff",
+                                d:
+                                  "M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878"
+                              }
+                            })
+                          ]
+                        )
                       ]
                     )
-                  ]
-                ),
+                  : _vm._e(),
                 _vm._v("\n    \n      " + _vm._s(_vm.issue.title) + "\n    ")
               ],
               1
@@ -17268,15 +17509,287 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container mx-auto" }, [
+    _c("h1", { staticClass: "text-xl my-3 opacity-75" }, [_vm._v("Dashboard")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex items-center justify-around flex-wrap" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1"
+        },
+        [
+          _c("h1", { staticClass: "px-2  py-1 border-b pb-1 shadow" }, [
+            _vm._v("Total Opened Projects")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center justify-around py-6" }, [
+            _c(
+              "svg",
+              { attrs: { width: "50", height: "50", viewBox: "0 0 20 20" } },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "#319795",
+                    d:
+                      "M8.627,7.885C8.499,8.388,7.873,8.101,8.13,8.177L4.12,7.143c-0.218-0.057-0.351-0.28-0.293-0.498c0.057-0.218,0.279-0.351,0.497-0.294l4.011,1.037C8.552,7.444,8.685,7.667,8.627,7.885 M8.334,10.123L4.323,9.086C4.105,9.031,3.883,9.162,3.826,9.38C3.769,9.598,3.901,9.82,4.12,9.877l4.01,1.037c-0.262-0.062,0.373,0.192,0.497-0.294C8.685,10.401,8.552,10.18,8.334,10.123 M7.131,12.507L4.323,11.78c-0.218-0.057-0.44,0.076-0.497,0.295c-0.057,0.218,0.075,0.439,0.293,0.495l2.809,0.726c-0.265-0.062,0.37,0.193,0.495-0.293C7.48,12.784,7.35,12.562,7.131,12.507M18.159,3.677v10.701c0,0.186-0.126,0.348-0.306,0.393l-7.755,1.948c-0.07,0.016-0.134,0.016-0.204,0l-7.748-1.948c-0.179-0.045-0.306-0.207-0.306-0.393V3.677c0-0.267,0.249-0.461,0.509-0.396l7.646,1.921l7.654-1.921C17.91,3.216,18.159,3.41,18.159,3.677 M9.589,5.939L2.656,4.203v9.857l6.933,1.737V5.939z M17.344,4.203l-6.939,1.736v9.859l6.939-1.737V4.203z M16.168,6.645c-0.058-0.218-0.279-0.351-0.498-0.294l-4.011,1.037c-0.218,0.057-0.351,0.28-0.293,0.498c0.128,0.503,0.755,0.216,0.498,0.292l4.009-1.034C16.092,7.085,16.225,6.863,16.168,6.645 M16.168,9.38c-0.058-0.218-0.279-0.349-0.498-0.294l-4.011,1.036c-0.218,0.057-0.351,0.279-0.293,0.498c0.124,0.486,0.759,0.232,0.498,0.294l4.009-1.037C16.092,9.82,16.225,9.598,16.168,9.38 M14.963,12.385c-0.055-0.219-0.276-0.35-0.495-0.294l-2.809,0.726c-0.218,0.056-0.351,0.279-0.293,0.496c0.127,0.506,0.755,0.218,0.498,0.293l2.807-0.723C14.89,12.825,15.021,12.603,14.963,12.385"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-xl font-bold traking-wider" }, [
+              _vm._v(_vm._s(_vm.total_projects))
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1"
+        },
+        [
+          _c("h1", { staticClass: "px-2  py-1 border-b pb-1 shadow" }, [
+            _vm._v("Total Opened Issues")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center justify-around py-6" }, [
+            _c(
+              "svg",
+              { attrs: { width: "50", height: "50", viewBox: "0 0 20 20" } },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "#319795",
+                    d:
+                      "M18.344,16.174l-7.98-12.856c-0.172-0.288-0.586-0.288-0.758,0L1.627,16.217c0.339-0.543-0.603,0.668,0.384,0.682h15.991C18.893,16.891,18.167,15.961,18.344,16.174 M2.789,16.008l7.196-11.6l7.224,11.6H2.789z M10.455,7.552v3.561c0,0.244-0.199,0.445-0.443,0.445s-0.443-0.201-0.443-0.445V7.552c0-0.245,0.199-0.445,0.443-0.445S10.455,7.307,10.455,7.552M10.012,12.439c-0.733,0-1.33,0.6-1.33,1.336s0.597,1.336,1.33,1.336c0.734,0,1.33-0.6,1.33-1.336S10.746,12.439,10.012,12.439M10.012,14.221c-0.244,0-0.443-0.199-0.443-0.445c0-0.244,0.199-0.445,0.443-0.445s0.443,0.201,0.443,0.445C10.455,14.021,10.256,14.221,10.012,14.221"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-xl font-bold traking-wider" }, [
+              _vm._v(_vm._s(_vm.total_issues))
+            ])
+          ])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "mt-8 mb-2 flex items-center flex-wrap md:flex-no-wrap" },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "bg-white shadow-xl rounded text-teal-700 w-full md:w-2/3 mr-1 my-1 self-start"
+          },
+          [
+            _c("h1", { staticClass: "p-2 border-b pb-1 shadow-xl" }, [
+              _vm._v("Latest Opened Projects")
+            ]),
+            _vm._v(" "),
+            _c(
+              "table",
+              { staticClass: "table-fixed w-full  text-center text-sm" },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.projects, function(project) {
+                    return _c(
+                      "tr",
+                      {
+                        key: project.id,
+                        staticClass: "leading-loose border-b border-l border-r"
+                      },
+                      [
+                        _c(
+                          "td",
+                          { staticClass: "py-2" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "text-teal-700 text-xs font-bold tracking-wider hover:opacity-50 transition-opacity duration-700",
+                                attrs: {
+                                  to: {
+                                    name: "show-project",
+                                    params: { id: project.id }
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(project.title) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "text-teal-700 font-bold tracking-wider hover:opacity-50 transition-opacity duration-700",
+                                attrs: {
+                                  to: {
+                                    name: "show-project",
+                                    params: { id: project.id }
+                                  }
+                                }
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "inline-block",
+                                    attrs: {
+                                      width: "20",
+                                      height: "20",
+                                      viewBox: "0 0 20 20"
+                                    }
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        fill: "#319795",
+                                        d:
+                                          "M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 ml-1 my-1 self-start"
+          },
+          [
+            _c("h1", { staticClass: "p-2 border-b pb-1 shadow-xl" }, [
+              _vm._v("Latest Issues")
+            ]),
+            _vm._v(" "),
+            _c(
+              "table",
+              { staticClass: "table-fixed w-full  text-center text-sm" },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.latest_issues, function(issue) {
+                    return _c(
+                      "tr",
+                      {
+                        key: issue.id,
+                        staticClass: "leading-loose border-b border-l border-r"
+                      },
+                      [
+                        _c(
+                          "td",
+                          { staticClass: "py-2" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass:
+                                  "text-teal-700 text-xs font-bold tracking-wider hover:opacity-50 transition-opacity duration-700",
+                                attrs: {
+                                  to: {
+                                    name: "show-issue",
+                                    params: {
+                                      projectId: issue.project_id,
+                                      issueId: issue.id
+                                    }
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(issue.title) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("span", {
+                            staticClass: "h-3 w-3 rounded-full inline-block",
+                            class: {
+                              "bg-red-600": issue.priority === "high",
+                              "bg-yellow-600": issue.priority === "medium",
+                              "bg-teal-600": issue.priority === "low"
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", { staticClass: "text-xl" }, [_vm._v(" Managers Dashboard")])
+    return _c("thead", { staticClass: "bg-gray-300 rounded leading-10" }, [
+      _c("th", { staticClass: "py-2" }, [_vm._v("Title")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "py-2" }, [_vm._v("Actions")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "bg-gray-300 rounded leading-10" }, [
+      _c("th", { staticClass: "py-2" }, [_vm._v("Title")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "py-2" }, [_vm._v("Priority")])
     ])
   }
 ]
@@ -19562,10 +20075,33 @@ var render = function() {
                       staticClass: "leading-loose border-b border-l border-r"
                     },
                     [
-                      _c("td", {
-                        staticClass: "py-2",
-                        domProps: { textContent: _vm._s(project.title) }
-                      }),
+                      _c(
+                        "td",
+                        { staticClass: "py-2" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "text-teal-700 font-bold tracking-wider hover:opacity-50 transition-opacity duration-700",
+                              attrs: {
+                                to: {
+                                  name: "show-project",
+                                  params: { id: project.id }
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(project.title) +
+                                  "\n                        "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c("td", { staticClass: "leading-loose" }, [
                         _c(
@@ -19576,50 +20112,7 @@ var render = function() {
                           },
                           [_vm._v(_vm._s(project.opened_issues))]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticClass: "py-2" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "px-4 py-1 rounded",
-                              attrs: {
-                                to: {
-                                  name: "show-project",
-                                  params: { id: project.id }
-                                }
-                              }
-                            },
-                            [
-                              _c(
-                                "svg",
-                                {
-                                  staticClass: "inline-block",
-                                  attrs: {
-                                    width: "20",
-                                    height: "20",
-                                    viewBox: "0 0 20 20"
-                                  }
-                                },
-                                [
-                                  _c("path", {
-                                    attrs: {
-                                      fill: "#319795",
-                                      stroke: "#319795",
-                                      d:
-                                        "M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z"
-                                    }
-                                  })
-                                ]
-                              )
-                            ]
-                          )
-                        ],
-                        1
-                      )
+                      ])
                     ]
                   )
                 }),
@@ -19638,12 +20131,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "bg-gray-300 rounded leading-loose" }, [
+    return _c("thead", { staticClass: "bg-gray-300 rounded leading-10" }, [
       _c("th", { staticClass: "py-2" }, [_vm._v("Title")]),
       _vm._v(" "),
-      _c("th", { staticClass: "py-2" }, [_vm._v("Opened Issues")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "py-2" }, [_vm._v("Actions")])
+      _c("th", { staticClass: "py-2" }, [_vm._v("Opened Issues")])
     ])
   }
 ]
@@ -19677,31 +20168,69 @@ var render = function() {
           "h1",
           { staticClass: "text-xl text-gray-600 mb-6 mt-2 flex items-center" },
           [
-            _c(
-              "router-link",
-              {
-                staticClass: "btn btn-teal",
-                attrs: { to: { name: "projects-index" } }
-              },
-              [
-                _c(
-                  "svg",
+            _vm.isManager
+              ? _c(
+                  "router-link",
                   {
-                    staticClass: "inline-block",
-                    attrs: { width: "20", height: "20", viewBox: "0 0 20 20" }
+                    staticClass: "btn btn-teal",
+                    attrs: { to: { name: "projects-index" } }
                   },
                   [
-                    _c("path", {
-                      attrs: {
-                        fill: "#fff",
-                        d:
-                          "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
-                      }
-                    })
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "inline-block",
+                        attrs: {
+                          width: "20",
+                          height: "20",
+                          viewBox: "0 0 20 20"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "#fff",
+                            d:
+                              "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
+                          }
+                        })
+                      ]
+                    )
                   ]
                 )
-              ]
-            ),
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.isManager
+              ? _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-teal",
+                    attrs: { to: { name: "projects" } }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "inline-block",
+                        attrs: {
+                          width: "20",
+                          height: "20",
+                          viewBox: "0 0 20 20"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            fill: "#fff",
+                            d:
+                              "M3.24,7.51c-0.146,0.142-0.146,0.381,0,0.523l5.199,5.193c0.234,0.238,0.633,0.064,0.633-0.262v-2.634c0.105-0.007,0.212-0.011,0.321-0.011c2.373,0,4.302,1.91,4.302,4.258c0,0.957-0.33,1.809-1.008,2.602c-0.259,0.307,0.084,0.762,0.451,0.572c2.336-1.195,3.73-3.408,3.73-5.924c0-3.741-3.103-6.783-6.916-6.783c-0.307,0-0.615,0.028-0.881,0.063V2.575c0-0.327-0.398-0.5-0.633-0.261L3.24,7.51 M4.027,7.771l4.301-4.3v2.073c0,0.232,0.21,0.409,0.441,0.366c0.298-0.056,0.746-0.123,1.184-0.123c3.402,0,6.172,2.709,6.172,6.041c0,1.695-0.718,3.24-1.979,4.352c0.193-0.51,0.293-1.045,0.293-1.602c0-2.76-2.266-5-5.046-5c-0.256,0-0.528,0.018-0.747,0.05C8.465,9.653,8.328,9.81,8.328,9.995v2.074L4.027,7.771z"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                )
+              : _vm._e(),
             _vm._v(" "),
             _c("span", { staticClass: "self-end ml-2" }, [
               _vm._v("Project Details")
@@ -20058,15 +20587,197 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container mx-auto" }, [
+    _c("h1", { staticClass: "text-xl my-3 opacity-75" }, [
+      _vm._v(" Dashboard")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex items-center justify-around flex-wrap" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1"
+        },
+        [
+          _c("h1", { staticClass: "px-2  py-1 border-b pb-1 shadow" }, [
+            _vm._v("Assigned Projects")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center justify-around py-6" }, [
+            _c(
+              "svg",
+              { attrs: { width: "50", height: "50", viewBox: "0 0 20 20" } },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "#319795",
+                    d:
+                      "M8.627,7.885C8.499,8.388,7.873,8.101,8.13,8.177L4.12,7.143c-0.218-0.057-0.351-0.28-0.293-0.498c0.057-0.218,0.279-0.351,0.497-0.294l4.011,1.037C8.552,7.444,8.685,7.667,8.627,7.885 M8.334,10.123L4.323,9.086C4.105,9.031,3.883,9.162,3.826,9.38C3.769,9.598,3.901,9.82,4.12,9.877l4.01,1.037c-0.262-0.062,0.373,0.192,0.497-0.294C8.685,10.401,8.552,10.18,8.334,10.123 M7.131,12.507L4.323,11.78c-0.218-0.057-0.44,0.076-0.497,0.295c-0.057,0.218,0.075,0.439,0.293,0.495l2.809,0.726c-0.265-0.062,0.37,0.193,0.495-0.293C7.48,12.784,7.35,12.562,7.131,12.507M18.159,3.677v10.701c0,0.186-0.126,0.348-0.306,0.393l-7.755,1.948c-0.07,0.016-0.134,0.016-0.204,0l-7.748-1.948c-0.179-0.045-0.306-0.207-0.306-0.393V3.677c0-0.267,0.249-0.461,0.509-0.396l7.646,1.921l7.654-1.921C17.91,3.216,18.159,3.41,18.159,3.677 M9.589,5.939L2.656,4.203v9.857l6.933,1.737V5.939z M17.344,4.203l-6.939,1.736v9.859l6.939-1.737V4.203z M16.168,6.645c-0.058-0.218-0.279-0.351-0.498-0.294l-4.011,1.037c-0.218,0.057-0.351,0.28-0.293,0.498c0.128,0.503,0.755,0.216,0.498,0.292l4.009-1.034C16.092,7.085,16.225,6.863,16.168,6.645 M16.168,9.38c-0.058-0.218-0.279-0.349-0.498-0.294l-4.011,1.036c-0.218,0.057-0.351,0.279-0.293,0.498c0.124,0.486,0.759,0.232,0.498,0.294l4.009-1.037C16.092,9.82,16.225,9.598,16.168,9.38 M14.963,12.385c-0.055-0.219-0.276-0.35-0.495-0.294l-2.809,0.726c-0.218,0.056-0.351,0.279-0.293,0.496c0.127,0.506,0.755,0.218,0.498,0.293l2.807-0.723C14.89,12.825,15.021,12.603,14.963,12.385"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-xl font-bold traking-wider" }, [
+              _vm._v(_vm._s(_vm.total_projects))
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "bg-white shadow-xl rounded text-teal-700 w-full md:w-1/3 my-1 mx-1"
+        },
+        [
+          _c("h1", { staticClass: "px-2  py-1 border-b pb-1 shadow" }, [
+            _vm._v("Opened Issues")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex items-center justify-around py-6" }, [
+            _c(
+              "svg",
+              { attrs: { width: "50", height: "50", viewBox: "0 0 20 20" } },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "#319795",
+                    d:
+                      "M18.344,16.174l-7.98-12.856c-0.172-0.288-0.586-0.288-0.758,0L1.627,16.217c0.339-0.543-0.603,0.668,0.384,0.682h15.991C18.893,16.891,18.167,15.961,18.344,16.174 M2.789,16.008l7.196-11.6l7.224,11.6H2.789z M10.455,7.552v3.561c0,0.244-0.199,0.445-0.443,0.445s-0.443-0.201-0.443-0.445V7.552c0-0.245,0.199-0.445,0.443-0.445S10.455,7.307,10.455,7.552M10.012,12.439c-0.733,0-1.33,0.6-1.33,1.336s0.597,1.336,1.33,1.336c0.734,0,1.33-0.6,1.33-1.336S10.746,12.439,10.012,12.439M10.012,14.221c-0.244,0-0.443-0.199-0.443-0.445c0-0.244,0.199-0.445,0.443-0.445s0.443,0.201,0.443,0.445C10.455,14.021,10.256,14.221,10.012,14.221"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "text-xl font-bold traking-wider" }, [
+              _vm._v(_vm._s(_vm.total_issues))
+            ])
+          ])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-8 mb-2" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "bg-white shadow-xl rounded text-teal-700 w-full md:w-2/3"
+        },
+        [
+          _c("h1", { staticClass: "p-2 border-b pb-1 shadow-xl" }, [
+            _vm._v("Latest Assigned Projects")
+          ]),
+          _vm._v(" "),
+          _c(
+            "table",
+            { staticClass: "table-fixed w-full  text-center text-sm" },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.projects, function(project) {
+                  return _c(
+                    "tr",
+                    {
+                      key: project.id,
+                      staticClass: "leading-loose border-b border-l border-r"
+                    },
+                    [
+                      _c(
+                        "td",
+                        { staticClass: "py-2" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "text-teal-700 text-xs font-bold tracking-wider hover:opacity-50 transition-opacity duration-700",
+                              attrs: {
+                                to: {
+                                  name: "show-project",
+                                  params: { id: project.id }
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(project.title) +
+                                  "\n                            "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "text-teal-700 font-bold tracking-wider hover:opacity-50 transition-opacity duration-700",
+                              attrs: {
+                                to: {
+                                  name: "show-project",
+                                  params: { id: project.id }
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "inline-block",
+                                  attrs: {
+                                    width: "20",
+                                    height: "20",
+                                    viewBox: "0 0 20 20"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      fill: "#319795",
+                                      d:
+                                        "M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z"
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                }),
+                0
+              )
+            ]
+          )
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mx-auto" }, [
-      _c("h1", { staticClass: "text-xl my-3" }, [_vm._v(" Team Dashboard")])
+    return _c("thead", { staticClass: "bg-gray-300 rounded leading-10" }, [
+      _c("th", { staticClass: "py-2" }, [_vm._v("Title")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "py-2" }, [_vm._v("Actions")])
     ])
   }
 ]
@@ -20112,12 +20823,33 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
       _c("flashmessage")
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center opacity-75" }, [
+      _vm._v("\n        Created by "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-teal-700 font-bold traking-widest hover:opacity-50",
+          attrs: { href: "https://sidirgot.com/profile", target: "_blank" }
+        },
+        [_vm._v("Sidirgot")]
+      ),
+      _vm._v(".\n        © 2020.\n    ")
+    ])
+  }
+]
 render._withStripped = true
 
 
